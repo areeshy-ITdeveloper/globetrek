@@ -1,0 +1,745 @@
+/* Custom Fonts and Reset */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #333333;
+  overflow-x: hidden;
+}
+
+/* --- HEADER SECTION --- */
+.gt-header {
+  background-color: #007A53;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  position: sticky; 
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  width: 100%;
+}
+
+.gt-logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gt-logo-img {
+  width: 40px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.gt-logo-text {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.gt-nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.gt-nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.gt-nav-link:hover {
+  opacity: 0.85;
+}
+
+.gt-nav-arrow {
+  font-size: 0.75rem;
+}
+
+.gt-btn-start {
+  background-color: #ffffff;
+  color: #007A53;
+  border: 2px solid #000000;
+  padding: 10px 24px;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.gt-btn-start:hover {
+  background-color: #f4f4f4;
+  transform: scale(1.03);
+}
+
+/* --- HERO SECTION --- */
+.gt-hero-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+  overflow: hidden;
+}
+
+/* Background image layer */
+.gt-hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: background-image 1.5s ease-in-out;
+  z-index: 1;
+}
+
+/* Content layer over background */
+.gt-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 1000px;
+  padding: 60px 20px;
+}
+
+.gt-hero-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.3;
+  margin-top: -100px; /* Safe standard screen shift balance */
+  margin-bottom: 20px;
+  max-width: 900px;
+  color: #ffffff; /* ⚡ FIXED: Safe solid bright fallback color to remove text rendering freeze */
+}
+
+.gt-hero-subtitle {
+  color: #fdfdfd;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.gt-btn-cta {
+  background: linear-gradient(180deg, #03B893 0%, #029475 100%);
+  color: #ffffff;
+  border: none;
+  padding: 14px 35px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 auto; 
+  box-shadow: 0 4px 15px rgba(2, 148, 117, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.gt-btn-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(2, 148, 117, 0.4);
+}
+
+/* --- WORKFLOW SECTION WRAPPER --- */
+.gt-workflow-section {
+  width: 100%;
+  padding: 60px 20px;
+  background: #ffffff;
+}
+
+.gt-workflow-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 40px;
+}
+
+.gt-workflow-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gt-workflow-text-block {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.gt-workflow-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #475569;
+  margin: 0;
+  text-align: justify;
+}
+
+.gt-workflow-description strong {
+  color: #000000;
+  font-weight: 700;
+}
+
+.gt-workflow-image-block {
+  flex: 1.2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.gt-mockup-wrapper {
+  width: 100%;
+  max-width: 650px;
+  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s ease;
+}
+
+.gt-mockup-wrapper:hover {
+  transform: translateY(-5px);
+}
+
+.gt-dashboard-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* ==========================================================================
+   PLANNED ACTIVITIES DROPDOWN & MINI PREVIEW MODAL STYLES
+   ========================================================================== */
+
+.gt-dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.gt-header-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  min-width: 180px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  padding: 8px 0;
+  z-index: 1000;
+  border: 1px solid #e2e8f0;
+  animation: fadeInDropdown 0.2s ease-out;
+}
+
+@keyframes fadeInDropdown {
+  from { opacity: 0; transform: translate(-50%, 10px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.gt-dropdown-item-btn {
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
+  text-align: left;
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  color: #334155;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gt-dropdown-item-btn:hover {
+  background: #f1f5f9;
+  color: #047857;
+}
+
+.gt-dropdown-item.empty-state {
+  display: block;
+  padding: 12px 16px;
+  font-size: 13px;
+  color: #94a3b8;
+  text-align: center;
+  font-style: italic;
+}
+
+/* ⚡ PURE VIEWPORT SCREEN OVERLAY FIX (MODAL LAYER) */
+.gt-modal-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background-color: rgba(0, 0, 0, 0.75) !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  z-index: 999999 !important; /* Forces layout to standard top view stack */
+}
+
+.gt-mini-modal-card {
+  background: #ffffff !important;
+  color: #1e293b !important;
+  padding: 30px !important;
+  border-radius: 16px !important;
+  width: 95% !important;
+  max-width: 520px !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+  position: relative !important;
+  z-index: 1000000 !important;
+  animation: modalScaleIn 0.2s ease-out;
+}
+
+@keyframes modalScaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.gt-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.gt-modal-header h3 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 20px;
+}
+
+.gt-modal-close-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #64748b;
+}
+
+.gt-modal-budget-badge {
+  background: #f1f5f9;
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.gt-modal-body-list {
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.gt-modal-activity-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.gt-modal-activity-row:last-child {
+  border-bottom: none;
+}
+
+.gt-modal-row-left {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  max-width: 80%;
+}
+
+.gt-modal-act-time {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.gt-modal-act-title {
+  font-size: 15px;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.gt-modal-act-desc {
+  font-size: 13px;
+  color: #64748b;
+  margin: 2px 0 0 0;
+  line-height: 1.4;
+}
+
+.gt-modal-act-cost {
+  font-size: 15px;
+  font-weight: 700;
+  color: #047857;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   INTERACTIVE CORE FEATURES GRID PATHWAY
+   ========================================================================== */
+
+.gt-features-section {
+  width: 100%;
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+.gt-features-title {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 80px;
+  letter-spacing: -0.5px;
+}
+
+.gt-features-pathway {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.gt-features-pathway::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  bottom: 40px;
+  left: 50%;
+  width: 6px;
+  background: linear-gradient(180deg, #047857 0%, #d97706 50%, #ea580c 100%);
+  transform: translateX(-50%);
+  z-index: 1;
+  opacity: 0.15;
+  border-radius: 3px;
+}
+
+.gt-feature-flow-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.gt-feature-flow-row:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.gt-feature-content-side {
+  width: 43%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gt-feature-space-balancer {
+  width: 43%;
+}
+
+.gt-feature-portal-circle {
+  width: 180px;
+  height: 180px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  padding: 15px;
+}
+
+.gt-feature-portal-circle:hover {
+  transform: scale(1.06) translateY(-5px);
+}
+
+.ring-accent-green { border-bottom: 5px solid #047857; }
+.ring-accent-yellow { border-bottom: 5px solid #d97706; }
+.ring-accent-orange { border-bottom: 5px solid #ea580c; }
+
+.mock-mini-box {
+  text-align: center;
+  width: 100%;
+}
+
+.mock-mini-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.mock-mini-value {
+  font-size: 22px;
+  font-weight: 800;
+  color: #047857;
+}
+
+.gt-feature-label-text {
+  margin-top: 18px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1e293b;
+  text-align: center;
+}
+
+.gt-horizontal-curve-wire {
+  position: absolute;
+  width: 48%;
+  height: 120px;
+  border: 4px solid transparent;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.gt-feature-flow-row:nth-child(1) .gt-horizontal-curve-wire {
+  right: 8%;
+  top: 50%;
+  border-right: 4px solid #047857;
+  border-bottom: 4px solid #d97706;
+  border-radius: 0 0 50px 0;
+}
+
+.gt-feature-flow-row:nth-child(2) .gt-horizontal-curve-wire {
+  left: 8%;
+  top: 50%;
+  border-left: 4px solid #d97706;
+  border-bottom: 4px solid #ea580c;
+  border-radius: 0 0 0 50px;
+}
+
+/* ==========================================================================
+   GLOBETREK CTA BANNER & FOOTER SECTION
+   ========================================================================== */
+
+.gt-footer-wrapper {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.gt-cta-container {
+  max-width: 1100px;
+  margin: 0 auto 50px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  box-sizing: border-box;
+  border: 4px solid transparent;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image: linear-gradient(to right, #ffffff, #ffffff), 
+                    linear-gradient(135deg, #00b4d8 0%, #007f5f 50%, #ffb703 100%);
+}
+
+.gt-cta-title {
+  font-family: 'Georgia', serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  font-style: italic;
+  color: #1e293b;
+  margin-bottom: 20px;
+}
+
+.gt-cta-btn {
+  background: linear-gradient(135deg, #02936c 0%, #5bc58e 100%);
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(2, 147, 108, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gt-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(2, 147, 108, 0.4);
+}
+
+.gt-cta-subtitle {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.gt-main-footer-card {
+  width: 100%;
+  margin: 0;
+  background: #006d4e;
+  padding: 50px 60px 30px 60px;
+  color: #ffffff;
+  box-sizing: border-box;
+}
+
+.gt-footer-columns-grid {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15%; 
+  margin-bottom: 40px;
+}
+
+.gt-footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gt-footer-col h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  margin-bottom: 5px;
+  letter-spacing: 0.5px;
+}
+
+.gt-footer-col span, 
+.gt-footer-col a {
+  font-size: 0.95rem;
+  color: #e2e8f0;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.gt-footer-col a:hover {
+  color: #a7f3d0;
+}
+
+.gt-footer-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 25px;
+  margin-top: 20px;
+}
+
+.gt-footer-brand-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.gt-footer-logo-img {
+  width: 55px;
+  height: auto;
+  object-fit: contain;
+}
+
+.gt-footer-brand-name {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+
+.gt-footer-copyright {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  letter-spacing: 0.2px;
+}
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+@media (max-width: 992px) {
+  .gt-workflow-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 35px;
+  }
+  
+  .gt-workflow-image-block {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .gt-nav {
+    display: none;
+  }
+  .gt-hero-title {
+    font-size: 2rem;
+    margin-top: -50px;
+  }
+  .gt-hero-subtitle {
+    font-size: 0.95rem;
+  }
+  .gt-main-footer-card {
+    padding: 35px 25px;
+  }
+  .gt-footer-columns-grid {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .gt-footer-bottom-row {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  .gt-footer-brand-meta {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .gt-features-pathway::before,
+  .gt-horizontal-curve-wire,
+  .gt-feature-space-balancer {
+    display: none !important;
+  }
+  .gt-feature-flow-row,
+  .gt-feature-flow-row:nth-child(even) {
+    flex-direction: column !important;
+    gap: 20px;
+  }
+  .gt-feature-content-side {
+    width: 100% !important;
+  }
+}

@@ -1,0 +1,610 @@
+.planner-dashboard-layout {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f1f5f9;
+}
+
+/* --- CONTROL PANEL MODIFICATIONS --- */
+.planner-control-panel {
+  width: 380px;
+  background: #ffffff;
+  border-right: 1px solid #e2e8f0;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 0 15px rgba(0,0,0,0.02);
+  overflow-y: auto;
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.back-home-btn {
+  background: none;
+  border: none;
+  color: #047857;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.planner-control-panel h2 {
+  font-size: 1.3rem;
+  color: #1e293b;
+  margin: 0;
+  font-weight: 700;
+}
+
+.planner-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group.row {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: flex-start; /* Aligns items perfectly at the top */
+}
+
+/* ⚡ FIXED: Sizing distributions for Date & Timing blocks */
+.form-group.row div:nth-child(1) {
+  flex: 1.8; /* Date input gets a bit more space for the picker calendar icon */
+}
+
+.form-group.row div:nth-child(2) {
+  flex: 1; /* Timing input box size is reduced significantly */
+  max-width: 140px; /* Restricts it from over-stretching and forcing vertical scroll */
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.planner-form input {
+  width: 100%; /* Ensures inputs respect the parent div's explicit flex sizing */
+  box-sizing: border-box; /* Prevents padding from exploding the real width */
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  background: #ffffff;
+}
+
+.planner-form input:focus {
+  border-color: #047857;
+}
+
+.add-activity-btn {
+  background: #047857;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.add-activity-btn:hover {
+  background: #065f46;
+}
+
+.add-activity-btn:active {
+  transform: scale(0.98);
+}
+
+/* --- DYNAMIC SAVED DAYS SIDEBAR TABS --- */
+.days-navigation-section {
+  margin-top: 25px;
+}
+
+.divider-line {
+  border: 0;
+  height: 1px;
+  background: #e2e8f0;
+  margin-bottom: 20px;
+}
+
+.days-navigation-section h3 {
+  font-size: 0.95rem;
+  color: #475569;
+  margin-bottom: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.days-buttons-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.day-tab-btn {
+  width: 100%;
+  padding: 12px 15px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #1e293b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.day-tab-btn:hover {
+  background: #e2e8f0;
+}
+
+.day-tab-btn.active-tab {
+  background: #047857;
+  color: #ffffff;
+  border-color: #047857;
+  box-shadow: 0 4px 12px rgba(4, 120, 87, 0.2);
+}
+
+/* --- RIGHT SIDE TIMELINE CANVAS --- */
+.planner-timeline-area {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* BUDGET WIDGET BOX */
+.live-budget-widget {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  padding: 12px 24px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  z-index: 50;
+}
+
+.budget-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #047857;
+  letter-spacing: 0.5px;
+}
+
+.budget-amount {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+/* EMPTY BLANK SCREEN LAYOUT */
+.empty-timeline-placeholder {
+  margin-top: 150px;
+  text-align: center;
+  max-width: 450px;
+  color: #64748b;
+}
+
+.placeholder-icon {
+  font-size: 4rem;
+  margin-bottom: 15px;
+}
+
+.empty-timeline-placeholder h3 {
+  font-size: 1.4rem;
+  color: #1e293b;
+  margin-bottom: 10px;
+}
+
+/* --- VISUAL HIGHWAY ROAD LAYOUT DESIGN --- */
+.s-timeline-wrapper {
+  width: 100%;
+  max-width: 750px;
+  margin-top: 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  position: relative;
+  padding-bottom: 80px;
+}
+
+/* The vertical middle strip that aligns the timeline */
+.central-highway-road {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 100%;
+  background: #cbd5e1;
+  border-radius: 6px;
+  z-index: 1;
+}
+
+.timeline-node-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 5;
+}
+
+.row-left { justify-content: flex-start; padding-left: 40px; }
+.row-right { justify-content: flex-end; padding-right: 40px; }
+
+/* CENTRAL STATION MILESTONE PIN */
+.road-milestone-dot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 32px;
+  background: #047857;
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  z-index: 10;
+}
+
+.milestone-number {
+  font-size: 0.75rem;
+  color: white;
+  font-weight: 800;
+}
+
+/* ITINERARY CARDS UI */
+.itinerary-card {
+  width: 290px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.itinerary-card:hover {
+  transform: translateY(-4px);
+}
+
+.card-header {
+  background: #f8fafc;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-day {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #047857;
+}
+
+.card-date-badge {
+  font-size: 0.7rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.card-body {
+  padding: 16px;
+}
+
+.card-main-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1e293b;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #475569;
+  border-top: 1px dashed #e2e8f0;
+  padding-top: 12px;
+}
+
+.card-cost {
+  color: #047857;
+  font-weight: 700;
+}
+
+/* S-CURVE INTER-DAY SHAPED LINKS OVERLAYS */
+.svg-curve-track {
+  position: absolute;
+  width: 170px;
+  height: 130px;
+  border: 4px dashed #94a3b8;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.curve-to-right {
+  left: 50%;
+  top: 16px;
+  border-radius: 0 80px 80px 0;
+  border-left: none;
+}
+
+.curve-to-left {
+  right: 50%;
+  top: 16px;
+  border-radius: 80px 0 0 80px;
+  border-right: none;
+}
+.clear-all-plan-btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background: #fef2f2;
+  border: 1px dashed #ef4444;
+  color: #b91c1c;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.clear-all-plan-btn:hover {
+  background: #fee2e2;
+  color: #991b1b;
+  border-style: solid;
+}
+/* Card relative position lazmi hai cross alignment ke liye */
+.itinerary-card {
+  position: relative; 
+  width: 290px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+  overflow: visible; /* Hidden se badge kat jata hai, visible safe hai */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.itinerary-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+/* ❌ THE FLOATING CROSS DELETE BUTTON CSS */
+.delete-activity-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 26px;
+  height: 26px;
+  background: #ef4444;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
+  z-index: 100;
+  opacity: 0; /* Default hidden transition */
+  transform: scale(0.8);
+  transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s;
+}
+
+/* Hover over parent element logic to trigger display */
+.itinerary-card:hover .delete-activity-badge {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.delete-activity-badge:hover {
+  background: #dc2626;
+}
+/* --- SWEETALERT CUSTOM FAMILY OVERRIDE --- */
+.gt-swal-popup {
+  font-family: 'Poppins', sans-serif !important;
+  border-radius: 16px !important;
+}
+/* --- CUSTOM CENTER POPUP MODAL STYLES --- */
+.gt-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.4); /* Dark muted transparent overlay */
+  backdrop-filter: blur(4px); /* Modern Glassmorphism blur effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Screen ke sab se upar render hone ke liye */
+  animation: fadeIn 0.25s ease-out;
+}
+
+.gt-popup-box {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e2e8f0;
+  animation: scaleUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.gt-popup-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.gt-popup-text {
+  font-size: 0.95rem;
+  color: #334155;
+  line-height: 1.5;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.gt-popup-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Base popup button blueprint */
+.gt-popup-btn {
+  padding: 10px 24px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background: #047857; /* App theme matching green */
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #065f46;
+}
+
+.btn-danger {
+  background: #ef4444;
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #dc2626;
+}
+
+.btn-secondary {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+}
+
+.btn-secondary:hover {
+  background: #e2e8f0;
+}
+
+/* Animations for smoothness */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+/* Generic Error styling rule for inputs */
+.planner-form input.input-error-border {
+  border-color: #ef4444 !important;
+  background-color: #fef2f2;
+}
+
+/* Jab user kisi red box me typing shuru karega to border standard input flow par revert ho jaye */
+.planner-form input.input-error-border:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+/* --- TEXTAREA AND WORD COUNTER LAYOUT --- */
+.label-count-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.word-counter-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 2px 8px;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+
+.word-counter-badge.limit-danger {
+  color: #ffffff;
+  background: #ef4444;
+}
+
+.form-textarea-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  outline: none;
+  font-family: inherit;
+  resize: none; /* User manually scale na kar sake code flow bigarne se bachane k liye */
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.form-textarea-input:focus {
+  border-color: #047857;
+}
+
+/* 🚨 ERROR VALIDATION RED BORDER CSS */
+.form-textarea-input.input-error-border {
+  border-color: #ef4444 !important;
+  background-color: #fef2f2;
+}
+
+/* --- CARD INNER DESCRIPTION COMPONENT --- */
+.card-description-text {
+  font-size: 0.85rem;
+  color: #475569;
+  line-height: 1.4;
+  margin: 0 0 12px 0;
+  text-transform: none; /* Keeps the normal capitalization profile for readability */
+  word-wrap: break-word;
+}
+/* Must wrap the complete window screen dynamically */
