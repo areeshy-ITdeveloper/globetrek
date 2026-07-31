@@ -1,6 +1,6 @@
-# 🗺️ GlobeTrek — Travel Planning Application
+# 🗺️ GlobeTrek — Travel Planning Web Application
 
-GlobeTrek is a modern, user-friendly travel planning application designed to help users map out, organize, and manage their journeys seamlessly. Built with a focus on smooth user experience, it operates fully without user authentication for instant, hassle-free accessibility.
+GlobeTrek is a modern, user-friendly travel planning web application designed to help users map out, organize, and manage their journeys seamlessly. Built with a focus on smooth user experience, it operates fully without user authentication for instant, hassle-free accessibility.
 
 ---
 
